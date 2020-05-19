@@ -1,0 +1,23 @@
+{% extends 'shop/base.html'%} {% block head %}
+<title>Contact Us</title>
+<style>
+    .page-title {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+{% endblock %} {% block content %}
+<div class="page-title mt-4">
+    <h1>Contact Us</h1>
+</div>
+<div class="container">
+    <div class="row p-0">
+        <div class="col-12 p-4 my-4">
+            <form action="{% url 'ContactUs' %}" method="POST">
+                {% csrf_token %} {{form.as_p}}
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
